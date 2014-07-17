@@ -14,8 +14,11 @@ Layout
 
 * package.json - symlink to cxserver/package.json file.
 
+How to
+------
+
 Updates
--------
+=======
 To update node_modules:
 
 ```
@@ -27,3 +30,20 @@ To update src to latest cxserver master:
 ```
 git submodule -q foreach git pull -q origin master
 ```
+
+Submit changes
+==============
+1. Do changes you want to add (either node_modules or cxserver src)
+
+2. Find what has been change in cxserver using,
+
+```
+git log --oneline --decorate --color --graph -n10
+```
+
+3. Describe changes in details in commit message.
+
+4. Submit change in Gerrit.
+
+5. Since there is no Jenkins placed at moment, merge your change 'byhand' using
+Publish and Submit button (FIXME).

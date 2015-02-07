@@ -17,8 +17,8 @@ Layout
 How to
 ------
 
-Updates
-=======
+Update
+======
 To update node_modules:
 
 ```
@@ -31,6 +31,16 @@ To update src to latest cxserver master:
 git submodule -q foreach git pull -q origin master
 ```
 
+If checking out first time, do:
+
+```
+git submodule init
+```
+
+```
+git submodule update --init --recursive
+```
+
 Submit changes
 ==============
 1. Do changes you want to add (either node_modules or cxserver src)
@@ -41,9 +51,6 @@ Submit changes
 git log --oneline --decorate --color --graph -n10
 ```
 
-3. Describe changes in details in commit message.
+3. Describe changes in commit message.
 
 4. Submit change in Gerrit.
-
-5. Since there is no Jenkins placed at moment, merge your change 'byhand' using
-Publish and Submit button (FIXME).

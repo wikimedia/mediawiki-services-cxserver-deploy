@@ -1,3 +1,9 @@
+cxserver (0.2) unstable; urgency=low
+
+  * Update as per cxserver's service-runner migration.
+
+ -- Kartik Mistry <kmistry@wikimedia.org>  Mon, 22 Feb 2016 10:43:47 +0530
+
 cxserver (0.1) UNRELEASED; urgency=low
 
   * Initial release based on Parsoid Debian package.

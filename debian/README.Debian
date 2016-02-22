@@ -1,0 +1,4 @@
+Node.js dependency
+==================
+
+cxserver depends on node.js >= 4.3 starting with 0.2 release.

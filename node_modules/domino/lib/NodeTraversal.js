@@ -1,10 +1,12 @@
+"use strict";
+/* exported NodeTraversal */
 var NodeTraversal = module.exports = {
   nextSkippingChildren: nextSkippingChildren,
   nextAncestorSibling: nextAncestorSibling,
   next: next,
   previous: previous,
   deepLastChild: deepLastChild
-}
+};
 
 /**
  * @based on WebKit's NodeTraversal::nextSkippingChildren
@@ -62,7 +64,7 @@ function next(node, stayWithin) {
  */
 function deepLastChild(node) {
   while (node.lastChild) {
-	node = node.lastChild;
+    node = node.lastChild;
   }
   return node;
 }
@@ -75,11 +77,11 @@ function previous(node, stayWithin) {
   var p;
   p = node.previousSibling;
   if (p !== null) {
-	return deepLastChild(p);
+    return deepLastChild(p);
   }
   p = node.parentNode;
   if (p === stayWithin) {
-	return null;
+    return null;
   }
   return p;
 }

@@ -1,9 +1,4 @@
-# config for the server
-debian/config.js etc/mediawiki/cxserver/
-
-# main source
-src/ usr/lib/cxserver/
-
-# node modules
+debian/*.yaml usr/lib/cxserver/
 node_modules/ usr/lib/cxserver/
 package.json usr/lib/cxserver/
+src/ usr/lib/cxserver/

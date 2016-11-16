@@ -1,0 +1,17 @@
+# log-related variables
+logstash_host: localhost
+logstash_port: 12201
+log_file: /tmp/citoid.log
+# metrics
+metrics_host: localhost
+metrics_port: 8125
+# service
+port: 8080
+mwapi_uri: https://{{domain}}/w/api.php
+restbase_uri: http://localhost:7231
+proxy:
+registry: registry.wikimedia.yaml
+jwt_token: abcdef
+apertium_uri: http://localhost:2737
+yandex_key: abcdefg
+youdao_key: abcdefg

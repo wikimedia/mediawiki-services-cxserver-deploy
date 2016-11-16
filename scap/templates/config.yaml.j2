@@ -1,0 +1,70 @@
+# Number of worker processes to spawn.
+# Set to 0 to run everything in a single process without clustering.
+# Use 'ncpu' to run as many workers as there are CPU units
+num_workers: ncpu
+
+# Log error messages and gracefully restart a worker if v8 reports that it
+# uses more heap (note: not RSS) than this many mb.
+worker_heap_limit_mb: 300
+
+# The maximum interval in ms that can pass between two beat messages
+# sent by each worker to the master before it is killed
+worker_heartbeat_timeout: 7500
+
+# Logger info
+logging:
+  level: warn
+  name: cxserver
+  streams:
+    - host: <%= logstash_host %>
+      port: <%= logstash_port %>
+      type: gelf
+    - level: info
+      path: <%= log_file %>
+      type: file
+
+# Statsd metrics reporter
+metrics:
+  name: cxserver
+  host: <%= metrics_host %>
+  port: <%= metrics_port %>
+  type: statsd
+
+services:
+  - name: cxserver
+    module: src/app.js
+    conf:
+      cors: "*"
+      port: <%= port %>
+      user_agent: CXServer/WMF
+      mwapi_req:
+        body: "{{ default(request.query, {}) }}"
+        headers:
+          host: "{{request.params.domain}}"
+          user-agent: "{{user-agent}}"
+        method: post
+        uri: <%= mwapi_uri %>
+      restbase_req:
+        body: "{{request.body}}"
+        headers: "{{request.headers}}"
+        method: "{{request.method}}"
+        query: "{{ default(request.query, {}) }}"
+        uri: <%= restbase_uri %>/{{domain}}/v1/{+path}
+      no_proxy_list:
+        - eqiad.wmnet
+        - codfw.wmnet
+      proxy: <%= proxy if proxy else '' %>
+      registry: <%= registry %>
+      jwt:
+        algorithms:
+          - HS256
+        secret: "<%= jwt_token %>"
+      mt:
+        apertium:
+          api: "<%= apertium_uri %>"
+        yandex:
+          api: https://translate.yandex.net
+          key: "<%= yandex_key %>"
+        youdao:
+          api: https://fanyi.youdao.com/paidapi/fanyiapi
+          key: "<%= youdao_key %>"

@@ -58,13 +58,13 @@ services:
       jwt:
         algorithms:
           - HS256
-        secret: "<%= jwt_token %>"
+        secret: "<%= jwt_token.replace("\"", "\\\"") %>"
       mt:
         apertium:
           api: "<%= apertium_uri %>"
         yandex:
           api: https://translate.yandex.net
-          key: "<%= yandex_key %>"
+          key: "<%= yandex_key.replace("\"", "\\\"") %>"
         youdao:
           api: https://fanyi.youdao.com/paidapi/fanyiapi
-          key: "<%= youdao_key %>"
+          key: "<%= youdao_key.replace("\"", "\\\"") %>"

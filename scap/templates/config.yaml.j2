@@ -53,6 +53,7 @@ services:
       no_proxy_list:
         - eqiad.wmnet
         - codfw.wmnet
+        - discovery.wmnet
       proxy: <%= proxy if proxy else '' %>
       registry: <%= registry %>
       jwt:

@@ -38,7 +38,8 @@ services:
       port: <%= port %>
       user_agent: CXServer/WMF
       mwapi_req:
-        body: "{{ default(request.query, {}) }}"
+        body: "{{request.body}}"
+        query: "{{ default(request.query, {}) }}"
         headers:
           host: "{{request.params.domain}}"
           user-agent: "{{user-agent}}"

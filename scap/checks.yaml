@@ -1,12 +1,12 @@
 checks:
-  endpoints:
-    type: nrpe
-    stage: restart_service
-    command: check_endpoints_cxserver
   depool:
     type: command
     stage: promote
     command: depool-cxserver
+  endpoints:
+    type: nrpe
+    stage: restart_service
+    command: check_endpoints_cxserver
   repool:
     type: command
     stage: restart_service

@@ -10,7 +10,6 @@ port: 8080
 mwapi_uri: https://{{domain}}/w/api.php
 restbase_uri: http://localhost:7231
 proxy:
-registry: registry.wikimedia.yaml
 jwt_token: abcdef
 apertium_uri: http://localhost:2737
 yandex_key: abcdefg

@@ -1,5 +1,0 @@
-# Defaults for cxserver initscript
-
-NODE_PATH=/usr/lib/cxserver/node_modules
-
-APP_BASE_PATH=/usr/lib/cxserver

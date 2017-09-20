@@ -1,4 +1,0 @@
-debian/*.yaml usr/lib/cxserver/
-node_modules/ usr/lib/cxserver/
-package.json usr/lib/cxserver/
-src/ usr/lib/cxserver/

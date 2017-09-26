@@ -62,14 +62,14 @@ services:
         secret: "<%= jwt_token.replace("\"", "\\\"") %>"
       languages: src/config/languages.yaml
       mt:
-        apertium:
+        Apertium:
           api: "<%= apertium_uri %>"
           languages: src/config/Apertium.wikimedia.yaml
-        yandex:
+        Yandex:
           api: https://translate.yandex.net
           key: "<%= yandex_key.replace("\"", "\\\"") %>"
           languages: src/config/Yandex.yaml
-        youdao:
+        Youdao:
           api: https://fanyi.youdao.com/paidapi/fanyiapi
           key: "<%= youdao_key.replace("\"", "\\\"") %>"
           languages: src/config/Youdao.yaml

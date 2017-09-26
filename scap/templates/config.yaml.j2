@@ -56,17 +56,24 @@ services:
         - codfw.wmnet
         - discovery.wmnet
       proxy: <%= proxy if proxy else '' %>
-      registry: <%= registry %>
       jwt:
         algorithms:
           - HS256
         secret: "<%= jwt_token.replace("\"", "\\\"") %>"
+      languages: src/config/languages.yaml
       mt:
         apertium:
           api: "<%= apertium_uri %>"
+          languages: src/config/Apertium.wikimedia.yaml
         yandex:
           api: https://translate.yandex.net
           key: "<%= yandex_key.replace("\"", "\\\"") %>"
+          languages: src/config/Yandex.yaml
         youdao:
           api: https://fanyi.youdao.com/paidapi/fanyiapi
           key: "<%= youdao_key.replace("\"", "\\\"") %>"
+          languages: src/config/Youdao.yaml
+        defaults: src/config/mt-defaults.wikimedia.yaml
+      dictionary:
+        JsonDict:
+          languages: src/config/JsonDict.yaml

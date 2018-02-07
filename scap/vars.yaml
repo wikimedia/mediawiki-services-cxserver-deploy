@@ -14,3 +14,5 @@ jwt_token: abcdef
 apertium_uri: http://localhost:2737
 yandex_key: abcdefg
 youdao_key: abcdefg
+matxin_key: abcdefg
+matxin_uri: http://matxin.elhuyar.eus/API

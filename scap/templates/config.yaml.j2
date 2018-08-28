@@ -65,6 +65,11 @@ services:
         Apertium:
           api: "<%= apertium_uri %>"
           languages: src/config/Apertium.wikimedia.yaml
+        LingoCloud:
+          api: "<%= lingocloud_uri %>"
+          key: "<%= lingocloud_key.replace("\"", "\\\"") %>"
+          account: "<%= lingocloud_account %>"
+          languages: src/config/LingoCloud.yaml
         Matxin:
           api: "<%= matxin_uri %>"
           key: "<%= matxin_key.replace("\"", "\\\"") %>"

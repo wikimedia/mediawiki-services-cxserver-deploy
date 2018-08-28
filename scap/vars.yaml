@@ -14,5 +14,8 @@ jwt_token: abcdef
 apertium_uri: http://localhost:2737
 yandex_key: abcdefg
 youdao_key: abcdefg
+lingocloud_key: abcdefg
+lingocloud_uri: https://api.interpreter.caiyunai.com/v1
+lingocloud_account: wikimedia
 matxin_key: abcdefg
 matxin_uri: http://matxin.elhuyar.eus/API

@@ -25,3 +25,5 @@ matxin_key: abcdefg
 matxin_uri: http://matxin.elhuyar.eus/API
 youdao_app_key: abcdefg
 youdao_app_secret: abcdefg
+google_key: abcdefg
+google_uri: https://www.googleapis.com/language/translate/v2

@@ -6,13 +6,15 @@ This is deployment repository of server component of ContentTranslation.
 
 Layout
 ------
-* debian - Debian directory, which can be use to build cxserver package.
+* config.yaml - symlink to src/config.dev.yaml file.
 
 * node_modules - node.js dependencies, updated with ``npm install``.
 
-* src - cxserver js code as submodule.
+* package.json - symlink to src/package.json file.
 
-* package.json - symlink to cxserver/package.json file.
+* scap - Configuration files for WMF production deployment.
+
+* src - cxserver js code as submodule.
 
 How to
 ------
@@ -43,14 +45,12 @@ git submodule update --init --recursive
 
 Submit changes
 ==============
-1. Do changes you want to add (either node_modules or cxserver src)
+Do not directly submit changes other than in scap directory, which is used for
+production configuration update in WMF.
 
-2. Find what has been change in cxserver using,
+To update cxserver/deploy, use following command in cxserver repository. This
+will automatically submit change in Gerrit.
 
 ```
-git log --oneline --decorate --color --graph -n10
+./server.js build --deploy-repo --force --review
 ```
-
-3. Describe changes in commit message.
-
-4. Submit change in Gerrit.

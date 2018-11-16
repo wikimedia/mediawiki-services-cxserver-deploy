@@ -62,6 +62,8 @@ services:
         secret: "<%= jwt_token.replace("\"", "\\\"") %>"
       languages: src/config/languages.yaml
       mt:
+        TestClient:
+          languages: src/config/TestClient.yaml
         Apertium:
           api: "<%= apertium_uri %>"
           languages: src/config/Apertium.wikimedia.yaml

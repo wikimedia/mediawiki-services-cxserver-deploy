@@ -80,10 +80,6 @@ services:
           api: https://translate.yandex.net
           key: "<%= yandex_key.replace("\"", "\\\"") %>"
           languages: src/config/Yandex.yaml
-        Youdao:
-          api: https://fanyi.youdao.com/paidapi/fanyiapi
-          key: "<%= youdao_key.replace("\"", "\\\"") %>"
-          languages: src/config/Youdao.yaml
         defaults: src/config/mt-defaults.wikimedia.yaml
       dictionary:
         JsonDict:

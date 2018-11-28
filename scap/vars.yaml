@@ -18,3 +18,5 @@ lingocloud_uri: https://api.interpreter.caiyunai.com/v1
 lingocloud_account: wikimedia
 matxin_key: abcdefg
 matxin_uri: http://matxin.elhuyar.eus/API
+youdao_app_key: abcdefg
+youdao_app_secret: abcdefg

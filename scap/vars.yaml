@@ -5,6 +5,10 @@ log_file: /tmp/cxserver.log
 # metrics
 metrics_host: localhost
 metrics_port: 8125
+# ratelimiter
+ratelimit_rate: 10
+ratelimit_hosts: []
+ipaddress: '127.0.0.1'
 # service
 port: 8080
 mwapi_uri: https://{{domain}}/w/api.php

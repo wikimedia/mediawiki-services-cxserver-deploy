@@ -30,6 +30,15 @@ metrics:
   port: <%= metrics_port %>
   type: statsd
 
+ratelimiter:
+  key: X-Client-IP
+  rate: <%= ratelimit_rate %>
+  type: kademlia
+  seeds: ['<%= ratelimit_hosts|join("','") %>']
+  listen:
+    address: <%= ipaddress %>
+    port: <%= ratelimit_port %>
+
 services:
   - name: cxserver
     module: src/app.js

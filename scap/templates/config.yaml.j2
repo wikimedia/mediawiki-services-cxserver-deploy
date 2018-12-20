@@ -31,8 +31,6 @@ metrics:
   type: statsd
 
 ratelimiter:
-  key: X-Client-IP
-  rate: <%= ratelimit_rate %>
   type: kademlia
   seeds: ['<%= ratelimit_hosts|join("','") %>']
   listen:
@@ -69,6 +67,8 @@ services:
         algorithms:
           - HS256
         secret: "<%= jwt_token.replace("\"", "\\\"") %>"
+      ratelimiter_key: X-Client-IP
+      ratelimiter_rate: <%= ratelimiter_rate %>
       languages: src/config/languages.yaml
       mt:
         TestClient:

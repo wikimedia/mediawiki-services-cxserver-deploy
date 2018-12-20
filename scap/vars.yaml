@@ -9,7 +9,7 @@ metrics_port: 8125
 ratelimit_rate: 10
 ratelimit_hosts: []
 ipaddress: '127.0.0.1'
-key: X-Client-IP
+key: 'X-Client-IP'
 # service
 port: 8080
 mwapi_uri: https://{{domain}}/w/api.php

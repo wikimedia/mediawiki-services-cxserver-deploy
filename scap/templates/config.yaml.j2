@@ -76,6 +76,10 @@ services:
         Apertium:
           api: "<%= apertium_uri %>"
           languages: src/config/Apertium.wikimedia.yaml
+        Google:
+          api: "<%= google_uri %>"
+          key: "<%= google_key.replace("\"", "\\\"") %>"
+          languages: src/config/Google.yaml
         LingoCloud:
           api: "<%= lingocloud_uri %>"
           key: "<%= lingocloud_key.replace("\"", "\\\"") %>"
